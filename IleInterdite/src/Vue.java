@@ -30,9 +30,9 @@ public class Vue  extends JFrame{
     JButton BouttonSacDeSable;
     JButton BoutonHeli;
 
-    public ImageIcon[] ImageJoueurs = {new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/joueur.jpg"),new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/etre_supreme.jpeg"),new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/poussin.jpeg")};
+    public ImageIcon[] ImageJoueurs = {new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/joueur.jpg"),new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/etre_supreme.jpeg"),new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/poussin.jpeg")};
 
-    public ImageIcon[] ImageArtefacts = {new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/artefact_terre.jpeg"),new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/artefact_feu.jpeg"),new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/artefact_eau.png"),new ImageIcon("/Users/mac/IdeaProjects/IleInterdite/src/artefact_air.png")};
+    public ImageIcon[] ImageArtefacts = {new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/artefact_terre.jpeg"),new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/artefact_feu.jpeg"),new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/artefact_eau.png"),new ImageIcon("/Users/victor/Projet_POGL/IleInterdite/src/artefact_air.png")};
 
 
 
@@ -608,8 +608,13 @@ public class Vue  extends JFrame{
                 }
                 j.x = x;
                 j.y = y;
+                if (modele.p.grille[j.x][j.y].contientArtefact){
+                    RecupererArtefactB.setEnabled(cleCorrespondArtefact(j,modele.p.grille[j.x][j.y].artefact));
+                }
+                else {RecupererArtefactB.setEnabled(false);}
                 try{
                     afficheJoueurs();
+
                 }
                 catch (IOException e){}
 
